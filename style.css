@@ -1,8 +1,10 @@
+/*general parameters*/
 html {
-  font-size: 62.5%;
+  font-size: 75%;
 }
 body {
   font-family: 'Outfit', sans-serif;
+  margin: 0;
 }
 :root {
   --color-background: hsl(0, 0%, 100%);
@@ -10,20 +12,21 @@ body {
   --color-third: hsl(220, 15%, 55%);
   --color-forth: hsl(218, 44%, 22%);
 }
-
-h3 {
+/*Typography*/
+h1 {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 0;
-  margin-top: 10px;
+
   color: var(--color-forth);
 }
 p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 400;
+  opacity: 0.8;
   color: var(--color-third);
 }
-
+/*main container*/
 .center {
   display: flex;
   justify-content: center;
@@ -31,33 +34,47 @@ p {
   height: 100vh;
   background: var(--color-second);
 }
+/*component wrapper grid*/
 .grid1x2 {
   display: grid;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 63% 37%;
+  grid-template-columns: 22rem;
+
   background: var(--color-background);
-  width: 22rem;
-  height: 35rem;
   border-radius: 15px;
   overflow: hidden;
+
+  cursor: pointer;
+  transition: all 0.9s;
+}
+.grid1x2:hover {
   transform: scale(1.1);
+  background: rgb(252, 11, 11);
+}
+.grid1x2:hover p {
+  color: rgb(251, 250, 248);
+  opacity: 1;
+}
+
+@media screen and (max-width: 300px) {
+  .grid1x2 {
+    transform: scale(0.6);
+  }
 }
 .picture {
   padding: 1rem;
+  padding-bottom: 0;
 }
-img {
+
+.picture > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 .text {
   padding: 1.3rem;
   padding-bottom: 0;
   padding-top: 0;
   text-align: center;
-}
-
-@media screen and (min-width: 750px) {
-  .grid1x2 {
-    transform: scale(0.8);
-  }
 }
